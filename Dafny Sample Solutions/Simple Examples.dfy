@@ -8,6 +8,8 @@ method example(a: int, b: int)
     assert(x + 1 >= -10);
     x := x + 1;
     assert(x >= -10);
+    assert y == 1;
     y := 0;
     assert(x >= -10);
 }
+

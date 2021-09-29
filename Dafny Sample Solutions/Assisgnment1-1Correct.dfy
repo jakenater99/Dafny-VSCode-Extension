@@ -5,7 +5,7 @@ method GCD1(a: int, b: int) returns (r: int)
     ensures r == gcd(a, b)
     decreases b // note that a % b < b
 {
-        //{ b > 0 && a > 0 && (a % b == 0 ==> b == gcd(a, b)) && (a % b != 0 ==> a % b > 0 && gcd(b, a % b) == gcd(a, b)) } //strengthening
+        { b > 0 && a > 0 && (a % b == 0 ==> b == gcd(a, b)) && (a % b != 0 ==> a % b > 0 && gcd(b, a % b) == gcd(a, b)) } //strengthening
         //{ (a < b ==> b > 0 && a > 0) && (a >= b ==> (a % b == 0 ==> b == gcd(a, b)) && (a % b != 0 ==> b > 0 && a % b > 0 && gcd(b, a % b) == gcd(a, b)) }
     if a < b {
         //{ b > 0 && a > 0 } 
@@ -25,6 +25,6 @@ method GCD1(a: int, b: int) returns (r: int)
             r := GCD1(b, a % b);
             //{ r == gcd(a, b) }
         }
-            assert(r == gcd(a, b));
+            //assert(r == gcd(a, b));
     }
 }
