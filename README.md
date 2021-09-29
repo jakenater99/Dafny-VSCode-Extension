@@ -1,6 +1,6 @@
-# Dafny-VSCode-Extension
+# Thesis Project
 This repository will be for my thesis project
-https://github.com/jakenater99/Dafny-VSCode-Extension
+https://github.com/jakenater99/Thesis-Project/tree/master
 
 This project will develop VS Code extensions which allow users to write and check weakest precondition proofs on Dafny code. This will allow future students of CSSE3100/7100 to readily format their assignments, and for tutors of CSSE3100/7100 to readily check assignments for correctness. It will also provide a valuable tool for software developers wanting to understand the behaviour of complex code.
 

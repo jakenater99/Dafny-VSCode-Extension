@@ -1,0 +1,25 @@
+{
+    "name": "wpp-student-formating",
+    "displayName": "WPP student formating",
+    "description": "Syntax and Semantic Highlighting for WPP in dafny",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.60.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dafny",
+            "aliases": ["Dafny", "dafny"],
+            "extensions": [".dfy"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dafny",
+            "scopeName": "source.dfy",
+            "path": "./syntaxes/dafny.tmLanguage.json"
+        }]
+    }
+}
