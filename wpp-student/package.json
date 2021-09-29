@@ -1,7 +1,7 @@
 {
-    "name": "wpp-student-formating",
-    "displayName": "WPP student formating",
-    "description": "Syntax and Semantic Highlighting for WPP in dafny",
+    "name": "wpp-student",
+    "displayName": "wpp-student",
+    "description": "wpp syntax and semantic checking for students",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.60.0"

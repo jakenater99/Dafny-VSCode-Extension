@@ -1,6 +1,6 @@
-# wpp-student-formating README
+# wpp-student README
 
-This is the README for your extension "wpp-student-formating". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "wpp-student". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 

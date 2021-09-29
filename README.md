@@ -15,6 +15,10 @@ https://www.usna.edu/Users/cs/wcbrown/courses/F19SI413/lec/l07/lec.html
                  scanning               parsing
 character stream --------> token stream -------> parse tree -----> abstract syntax tree
 
+Step 1: Implemnt wpp keyword
+Step 2: Implement syntax and semantics on wpp predicate (Either textMate or Coco/R)
+Step 3: Add hovers 
+
 # Extension 2: Tutor version that checks the validity of the proof (Private)
 
 # How to run the extension
