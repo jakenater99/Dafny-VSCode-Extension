@@ -15,7 +15,7 @@ https://www.usna.edu/Users/cs/wcbrown/courses/F19SI413/lec/l07/lec.html
                  scanning               parsing
 character stream --------> token stream -------> parse tree -----> abstract syntax tree
 
-Step 1: Implemnt wpp keyword
+Step 1: Implemnt wpp keyword (Done)
 Step 2: Implement syntax and semantics on wpp predicate (Either textMate or Coco/R)
 Step 3: Add hovers 
 

@@ -16,10 +16,12 @@
             "extensions": [".dfy"],
             "configuration": "./language-configuration.json"
         }],
-        "grammars": [{
-            "language": "dafny",
-            "scopeName": "source.dfy",
-            "path": "./syntaxes/dafny.tmLanguage.json"
-        }]
+        "grammars": [
+            {
+              "language": "dafny",
+              "scopeName": "text.dfy.dafny",
+              "path": "./syntaxes/Dafny.tmLanguage"
+            }
+        ]
     }
 }
