@@ -12,4 +12,3 @@ method example(a: int, b: int)
     y := 0;
     assert(x >= -10);
 }
-
