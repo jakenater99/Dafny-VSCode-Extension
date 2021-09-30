@@ -1,0 +1,229 @@
+{
+  "name": "dafny-vscode",
+  "displayName": "Dafny",
+  "description": "Dafny for Visual Studio Code",
+  "version": "2.0.0",
+  "publisher": "correctnessLab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dafny-lang/ide-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/dafny-lang/ide-vscode/issues"
+  },
+  "qna": false,
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#FFEC50",
+    "theme": "light"
+  },
+  "icon": "logo.png",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension",
+  "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorTextFocus && editorLangId == dafny",
+          "command": "dafny.compile",
+          "group": "7_Dafny@5"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == dafny",
+          "command": "dafny.compileCustomArgs",
+          "group": "7_Dafny@6"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == dafny",
+          "command": "dafny.compileAndRun",
+          "group": "7_Dafny@7"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == dafny",
+          "command": "dafny.showCounterExample",
+          "group": "7_Dafny@1"
+        },
+        {
+          "when": "editorTextFocus && editorLangId == dafny",
+          "command": "dafny.hideCounterExample",
+          "group": "7_Dafny@2"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "dafny.compile",
+        "key": "ctrl+shift+b",
+        "mac": "⇧⌘B",
+        "when": "editorTextFocus && editorLangId == dafny"
+      },
+      {
+        "command": "dafny.compileAndRun",
+        "key": "f5",
+        "mac": "f5",
+        "when": "editorTextFocus && editorLangId == dafny"
+      },
+      {
+        "command": "dafny.compileCustomArgs",
+        "key": "f6",
+        "mac": "f6",
+        "when": "editorTextFocus && editorLangId == dafny"
+      },
+      {
+        "command": "dafny.showCounterExample",
+        "key": "f7",
+        "when": "editorTextFocus && editorLangId == dafny"
+      },
+      {
+        "command": "dafny.hideCounterExample",
+        "key": "f8",
+        "when": "editorTextFocus && editorLangId == dafny"
+      }
+    ],
+    "languages": [
+      {
+        "id": "dafny",
+        "aliases": [
+          "Dafny",
+          "dafny"
+        ],
+        "extensions": [
+          ".dfy",
+          ".dfyi"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dafny",
+        "scopeName": "text.dfy.dafny",
+        "path": "./syntaxes/Dafny.tmLanguage"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Dafny extension configuration",
+      "properties": {
+        "dafny.languageServerRuntimePath": {
+          "type": "string",
+          "default": null,
+          "description": "Absolute or relative path to the DafnyLanguageServer.dll"
+        },
+        "dafny.automaticVerification": {
+          "type": "string",
+          "default": "onchange",
+          "enum": [
+            "never",
+            "onchange",
+            "onsave"
+          ],
+          "description": "When to apply the automatic verification (requires restart)"
+        },
+        "dafny.verificationTimeLimit": {
+          "type": "number",
+          "default": "0",
+          "description": "Maximum number of time in seconds to verify a document, 0=infinite (requires restart)"
+        },
+        "dafny.verificationVirtualCores": {
+          "type": "number",
+          "default": "0",
+          "description": "Maximum number of virtual cores that may be used for verification, 0=auto (requires restart)"
+        },
+        "dafny.languageServerLaunchArgs": {
+          "type": "array",
+          "default": [],
+          "description": "Optional array of strings to pass to the language server runtime."
+        },
+        "dafny.compilerRuntimePath": {
+          "type": "string",
+          "default": null,
+          "description": "Absolute or relative path to the Dafny.dll"
+        },
+        "dafny.compilerOutputDir": {
+          "type": "string",
+          "default": "bin",
+          "description": "Absolute or relative path to the compilation output directory."
+        },
+        "dafny.compilerArgs": {
+          "type": "array",
+          "default": [
+            "/verifyAllModules",
+            "/compile:1",
+            "/spillTargetCode:1"
+          ],
+          "description": "Optional array of strings as Dafny compilation arguments"
+        },
+        "dafny.dotnetExecutablePath": {
+          "type": "string",
+          "description": "The absolute path of dotnet. Only necessary if dotnet is not in system PATH (you'll get an error if that's the case)."
+        },
+        "dafny.colorCounterExamples": {
+          "type": "object",
+          "default": {
+            "backgroundColor": null,
+            "fontColor": null
+          },
+          "description": "Customize the color (HEX) of Counter Examples. There are two default colors: for dark theme (#0d47a1, #e3f2fd) and light theme (#bbdefb, #102027). This color setting will override both defaults."
+        },
+        "dafny.terminalCommandPrefix": {
+          "type": "string",
+          "default": null,
+          "description": "The prefix to use when executing a command in the VS Code terminal. Defaults to & on windows."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "dafny.compile",
+        "title": "Dafny: Compile"
+      },
+      {
+        "command": "dafny.compileCustomArgs",
+        "title": "Dafny: Compile with Custom Arguments"
+      },
+      {
+        "command": "dafny.compileAndRun",
+        "title": "Dafny: Compile and Run"
+      },
+      {
+        "command": "dafny.showCounterExample",
+        "title": "Dafny: Show CounterExample"
+      },
+      {
+        "command": "dafny.hideCounterExample",
+        "title": "Dafny: Hide CounterExample"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:dafny"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "lint": "eslint --max-warnings=0 **/*.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.0",
+    "@types/vscode": "^1.52.0",
+    "@types/which": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "extract-zip": "^2.0.1",
+    "got": "^11.8.2",
+    "vscode-languageclient": "^7.0.0",
+    "vscode-uri": "^3.0.2",
+    "which": "^2.0.2"
+  }
+}
