@@ -12,18 +12,6 @@
 	<string>^\s*(\}|// \}\}\}$)</string>
 	<key>name</key>
 	<string>Dafny</string>
-	<key>tokenColors</key>
-	<array>
-		<dict>
-			<key>scope</key>
-			<string>keyword.wpp.dafny</string>
-			<key>settings</key>
-            <dict>
-				<key>foreground</key>
-                <string>#777777</string>
-			</dict>
-		</dict>
-	</array>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -49,15 +37,9 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(class|trait|datatype|codatatype|type|newtype|function|ghost|nameonly|var|const|method|constructor|abstract|module|import|export|lemma|as|is|opened|static|twostate|refines|witness|extends|returns|break|then|else|if|label|return|while|for|to|downto|print|new|in|fresh|allocated|match|case|assert|by|assume|expect|reveal|modify|predicate|least|greatest|forall|exists|false|true|null|old|unchanged|calc|iterator|yields|yield)\b</string>
-			<key>name</key>
-			<string>keyword.control.dafny</string>
-		</dict>
-		<dict>
-			<key>match</key>
 			<string>\b(wpp)\b</string>
 			<key>name</key>
-			<string>keyword.other.dafny</string>
+			<string>keyword.control.dafny</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -176,20 +158,9 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>\b(class|trait|datatype|codatatype|type|newtype|function|include|ghost|nameonly|var|const|method|constructor|abstract|module|import|export|lemma|as|is|opened|static|twostate|refines|witness|extends|returns|break|then|else|if|label|return|while|for|to|downto|print|new|in|fresh|allocated|match|case|assert|by|assume|expect|reveal|modify|predicate|least|greatest|forall|exists|false|true|null|old|unchanged|calc|iterator|yields|yield)\b</string>
-					<key>name</key>
-					<string>keyword.control.dafny</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>\b(wpp)\b</string>
 					<key>name</key>
-					<string>keyword.other.dafny</string>
-					<key>settings</key>
-					<dict>
-						<key>foreground</key>
-                		<string>#777777</string>
-					</dict>
+					<string>keyword.control.dafny</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -303,7 +274,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.dfy.dafny</string>
+	<string>wpp.injection</string>
 	<key>uuid</key>
 	<string>f4eb6552-5503-47cf-9d18-6388d0981235</string>
 </dict>

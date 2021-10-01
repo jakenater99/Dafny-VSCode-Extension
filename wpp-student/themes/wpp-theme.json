@@ -1,0 +1,56 @@
+{
+	"name": "theme for wpp",
+	"type": "dark",
+	"colors": {
+		"editor.foreground": "#b6c6cb",
+	},
+	"tokenColors": [
+		{
+			"name": "wpp",
+			"scope": [
+				"keyword.other"
+			],
+			"settings": {
+				"foreground": "#9CFE7C"
+			}
+		},
+		{
+			"name": "keywords",
+			"scope": [
+				"keyword.control"
+			],
+			"settings": {
+				"foreground": "#c583ba"
+			}
+		},
+		{
+			"name": "types",
+			"scope": [
+				"keyword.type",
+				"storage.type",
+			],
+			"settings": {
+				"foreground": "#4e96bc"
+			}
+		},
+		{
+			"name": "comment",
+			"scope": [
+				"comment",
+				"punctuation.definition.comment"
+			],
+			"settings": {
+				"foreground": "#689855"
+			}
+		},
+		{
+			"name": "Function, Special Method",
+			"scope": [
+				"entity.name.function",
+			],
+			"settings": {
+				"foreground": "#dcdcaa"
+			}
+		},
+	]
+}

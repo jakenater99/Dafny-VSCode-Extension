@@ -15,6 +15,8 @@ https://www.usna.edu/Users/cs/wcbrown/courses/F19SI413/lec/l07/lec.html
                  scanning               parsing
 character stream --------> token stream -------> parse tree -----> abstract syntax tree
 
+Tasks
+
 Step 1: Implemnt wpp keyword (Done)
 Step 2: Implement syntax and semantics on wpp predicate (Either textMate or Coco/R)
 Step 3: Add hovers 
@@ -48,6 +50,7 @@ https://github.com/microsoft/TypeScript/wiki/Using-the-Language-Service-API
 
 TextMate grammars
 https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide
+https://www.apeth.com/nonblog/stories/textmatebundle.html 
 
 Format Code as User Types
 https://code.visualstudio.com/api/language-extensions/programmatic-language-features 
@@ -74,5 +77,9 @@ https://github.com/dafny-lang/dafny
 Dafny Documentation 
 https://dafny-lang.github.io/dafny/ 
 
-Tasks
-1. Implement wpp keywork/function without functionality
+Regular Expression
+
+Dafny.atg holds logic for syntax and semantics in source code
+
+sublime-dafny for syntax highlighting
+https://github.com/tvi/sublime-dafny
