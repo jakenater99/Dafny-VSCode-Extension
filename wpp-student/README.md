@@ -2,6 +2,16 @@
 
 This is the README for your extension "wpp-student". After writing up a brief description, we recommend including the following sections.
 
+Thesis Project Proposal
+Statement
+This project will develop VS Code extensions which allow users to write and check weakest precondition proofs on Dafny code. This will allow future students of CSSE3100/7100 to readily format their assignments, and for tutors of CSSE3100/7100 to readily check assignments for correctness. It will also provide a valuable tool for software developers wanting to understand the behaviour of complex code.
+
+You must either have knowledge of the following, or be keen to gain it:
+- Dafny programming language
+- weakest precondition reasoning
+- TypeScript or JavaScript
+
+
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.

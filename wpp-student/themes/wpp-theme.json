@@ -11,7 +11,7 @@
 				"keyword.other"
 			],
 			"settings": {
-				"foreground": "#9CFE7C"
+				"foreground": "#9CFE7C",
 			}
 		},
 		{
@@ -27,7 +27,7 @@
 			"name": "types",
 			"scope": [
 				"keyword.type",
-				"storage.type",
+				"storage.type"
 			],
 			"settings": {
 				"foreground": "#4e96bc"

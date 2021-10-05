@@ -83,3 +83,17 @@ Dafny.atg holds logic for syntax and semantics in source code
 
 sublime-dafny for syntax highlighting
 https://github.com/tvi/sublime-dafny
+
+Important Files
+counterExample.ts
+https://github.com/dafny-lang/ide-vscode/blob/master/src/language/api/counterExample.ts 
+- ICounterExampleItem
+
+counterExamplesViews.ts
+https://github.com/dafny-lang/ide-vscode/blob/929b0da1edc9e673a1c2dbe1309ed9e0f059c607/src/ui/counterExamplesView.ts#L111
+- createDecorator
+- createTextEditorDecoration
+
+eslint - linting
+
+You can implement programmatic language features by using language server protocol (LSP) or extensibility API

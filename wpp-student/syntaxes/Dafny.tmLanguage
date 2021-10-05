@@ -185,11 +185,6 @@
 					<string>\b(wpp)\b</string>
 					<key>name</key>
 					<string>keyword.other.dafny</string>
-					<key>settings</key>
-					<dict>
-						<key>foreground</key>
-                		<string>#777777</string>
-					</dict>
 				</dict>
 				<dict>
 					<key>match</key>
