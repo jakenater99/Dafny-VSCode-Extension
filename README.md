@@ -97,3 +97,7 @@ https://github.com/dafny-lang/ide-vscode/blob/929b0da1edc9e673a1c2dbe1309ed9e0f0
 eslint - linting
 
 You can implement programmatic language features by using language server protocol (LSP) or extensibility API
+
+VC - Verification-condition formulas
+
+Foreign Function Interface (FFI)
