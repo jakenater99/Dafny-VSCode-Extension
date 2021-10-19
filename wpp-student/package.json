@@ -1,34 +1,98 @@
 {
-    "name": "wpp-student",
-    "displayName": "wpp-student",
-    "description": "wpp syntax and semantic checking for students",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.60.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [{
-            "id": "dafny",
-            "aliases": ["Dafny", "dafny"],
-            "extensions": [".dfy"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [
-            {
-              "language": "dafny",
-              "scopeName": "text.dfy.dafny",
-              "path": "./syntaxes/Dafny.tmLanguage"
-            }
-        ],
-        "themes": [
-            {
-                "label": "theme for wpp",
-                "uiTheme": "vs-dark",
-                "path": "./themes/wpp-theme.json"
-            }
-        ]
-    }
+	"name": "lsp-sample",
+	"description": "A language server example",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-extension-samples"
+	},
+	"publisher": "vscode-samples",
+	"categories": [],
+	"keywords": [
+		"multi-root ready"
+	],
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"activationEvents": [
+		"onLanguage:dafny"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Example configuration",
+			"properties": {
+				"languageServerExample.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the maximum number of problems produced by the server."
+				},
+				"languageServerExample.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between VS Code and the language server."
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "dafny",
+				"aliases": [
+					"Dafny",
+					"dafny"
+				],
+				"extensions": [
+					".dfy"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "dafny",
+				"scopeName": "text.dfy.dafny",
+				"path": "./syntaxes/Dafny.tmLanguage"
+			}
+		],
+		"themes": [
+			{
+				"label": "theme for wpp",
+				"uiTheme": "vs-dark",
+				"path": "./themes/wpp-theme.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"lint": "eslint ./client/src ./server/src --ext .ts,.tsx",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"devDependencies": {
+		"@types/mocha": "^8.2.2",
+		"@types/node": "^12.12.0",
+		"@typescript-eslint/eslint-plugin": "^4.23.0",
+		"@typescript-eslint/parser": "^4.23.0",
+		"eslint": "^7.26.0",
+		"mocha": "^8.3.2",
+		"typescript": "^4.4.3"
+	},
+	"dependencies": {
+		"compile": "0.0.2",
+		"run": "^1.4.0",
+		"vscode-languageserver": "^7.0.0",
+		"vscode-languageserver-textdocument": "^1.0.1"
+	}
 }

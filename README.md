@@ -101,3 +101,7 @@ You can implement programmatic language features by using language server protoc
 VC - Verification-condition formulas
 
 Foreign Function Interface (FFI)
+
+https://github.com/microsoft/vscode-extension-samples
+
+Input box api for authentication

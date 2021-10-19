@@ -1,9 +1,14 @@
+TypeScript lets you write JavaScript the way you really want to.
+TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
+ANY browser. ANY host. ANY OS. Open Source. 
+wpp := 1;
+//wpp x == 1
+wpp x == 1
+
 method example(a: int, b: int) returns (x: int, y: int)
-    requires a > 0 && b > 0
+    requires a > 1 && b > 1
     //ensures x == 3 && y == 3
-{   
-    //{ x == 1 }
-    //{x == 1}
+{ 
     var wpp := 0;
     wpp := 1;
     var c := true;
