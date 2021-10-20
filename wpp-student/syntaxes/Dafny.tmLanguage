@@ -55,7 +55,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(wpp)\b</string>
+			<string>\b(?<={\s{0,}).*(?=\s{0,}})\b</string>
 			<key>name</key>
 			<string>keyword.other.dafny</string>
 		</dict>
@@ -166,7 +166,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>\s*((//).*$\n?)</string>
+					<string>(//[\S\s]{0,}(?={) | //[\S\s]{0,})</string>
 				</dict>
 			</array>
 		</dict>
@@ -182,7 +182,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\b(wpp)\b</string>
+					<string>/\b(?<={\s{0,}).*(?=\s{0,}})\b/g</string>
 					<key>name</key>
 					<string>keyword.other.dafny</string>
 				</dict>
