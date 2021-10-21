@@ -166,7 +166,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(//[\S\s]{0,}(?={) | //[\S\s]{0,})</string>
+					<string>(//[\S\s]{0,}(?={)|//[\S\s]{0,})</string>
 				</dict>
 			</array>
 		</dict>

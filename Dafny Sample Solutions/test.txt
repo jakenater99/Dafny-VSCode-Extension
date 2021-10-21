@@ -4,21 +4,3 @@ ANY browser. ANY host. ANY OS. Open Source.
 wpp := 1;
 //wpp x == 1
 wpp x == 1
-
-method example(a: int, b: int) returns (x: int, y: int)
-    requires a > 1 && b > 1
-    //ensures x == 3 && y == 3
-{ 
-    var wpp := 0;
-    wpp := 1;
-    var c := true;
-    x,y := a,b;
-    assert(x >= 0 && c ==> true);
-    assert(x >= -10);
-    assert(x + 1 >= -10);
-    x := x + 1;
-    //assert y == 10;
-    //y := 0;
-    //x := 6;
-    assert(x >= -10);
-}

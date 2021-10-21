@@ -2,7 +2,7 @@ method example(a: int, b: int) returns (x: int, y: int)
     requires a > 0 && b > 0
     //ensures x == 3 && y == 3
 {   
-    //{ x == 1 }
+    // asd{ x == 1 }
     //{x == 1}
     var wpp := 0;
     wpp := 1;
