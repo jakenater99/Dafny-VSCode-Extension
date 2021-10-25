@@ -13,21 +13,11 @@ import { WppVerificationItem } from './api/wppVerification';
 
 let client: LanguageClient;
 
-const verified: WppVerificationItem = {
-	position: new Position(5, 10),
-	verificationStatus: true
-};
-
-const unverified: WppVerificationItem = {
-	position: new Position(6, 10),
-	verificationStatus: false
-};
-
 export function activate(context: ExtensionContext) {
 
 	console.log('Congratulations, your extension "wpp" is now active!');
 
-	const showWppCommand = commands.registerCommand('output.showWppVerification', () => WppVerificationView.showWppVerifications([verified,unverified],window.activeTextEditor));
+	const showWppCommand = commands.registerCommand('output.showWppVerification', () => WppVerificationView.showWppVerifications(window.activeTextEditor));
 
 	const hideWppCommand = commands.registerCommand('output.hideWppVerification', () => WppVerificationView.hideWppVerifications(window.activeTextEditor));
 
