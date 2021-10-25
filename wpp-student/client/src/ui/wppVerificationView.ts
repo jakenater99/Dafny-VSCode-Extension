@@ -16,27 +16,33 @@ const DefaultDarkFontColor = '#e3f2fd';
 const DefaultLightBackgroundColor = '#bbdefb';
 const DefaultLightFontColor = '#102027';
 
-const verified: WppVerificationItem = {
-	position: new Position(4, 20),
-	verificationStatus: true
-};
-
-const unverified: WppVerificationItem = {
-	position: new Position(5, 20),
-	verificationStatus: false
-};
-
 export default class WppVerificationView {
     private static readonly activeDecorations = new Map<Uri, TextEditorDecorationType>();
-    private readonly documentsWithActiveCounterExamples = new Set<Uri>();
+    private static readonly documentsWithActiveWpps = new Set<Uri>();
 
     private constructor() {
         return;
     }
     
+    public static updateWppVerifications(editor: TextEditor) {
+        if(editor == null) {
+            return;
+        }
+        const document = editor.document.uri;
+        if(!this.documentsWithActiveWpps.has(document)) {
+            return;
+        }
+        this.hideWppVerifications(editor);
+        this.showWppVerifications(editor);
+        return;
+    }
 
     public static showWppVerifications(editor: TextEditor) {
-        window.showInformationMessage('Show Wpp Verification!');
+        //window.showInformationMessage('Show Wpp Verification!');
+        if(editor == null) {
+            return;
+        }
+        this.documentsWithActiveWpps.add(editor.document.uri);
         const document = editor.document.uri;
         if(this.activeDecorations.has(document)) {
             return;
@@ -50,7 +56,11 @@ export default class WppVerificationView {
     }
 
     public static hideWppVerifications(editor: TextEditor): void {
-        window.showInformationMessage('Hide Wpp Verification!');
+        //window.showInformationMessage('Hide Wpp Verification!');
+        if(editor == null) {
+            return;
+        }
+        this.documentsWithActiveWpps.delete(editor.document.uri);
         const document = editor.document.uri;
         const decoration = this.activeDecorations.get(document);
         if(decoration == null) {
@@ -145,14 +155,11 @@ export default class WppVerificationView {
         let text: string;
         const re = new RegExp("(?<={s{0,}).*(?=s{0,}})");
         for (let i = 0; i < editor.document.lineCount; i++) {
-            console.log(editor.document.lineAt(i).text);
             text = editor.document.lineAt(i).text;
             if(re.test(text)) {
-                console.log(i);
                 wppLines.push(i);
             } 
         }
-        console.log(wppLines);
         return wppLines;
     }
 
@@ -160,9 +167,7 @@ export default class WppVerificationView {
         // eslint-disable-next-line prefer-const
         let wppItems: WppVerificationItem[] = [];
         let wppItem: WppVerificationItem;
-        console.log('a');
         for (let i = 0; i < lines.length; i++) {
-            console.log(i);
             wppItem = {
                 position: new Position(lines[i], 20),
                 verificationStatus: false
