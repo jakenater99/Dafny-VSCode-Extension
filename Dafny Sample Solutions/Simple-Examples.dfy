@@ -1,6 +1,6 @@
 method example(a: int, b: int) returns (x: int, y: int)
     requires a > 0 && b > 0
-    //ensures x == 3 && y == 3
+    ensures x == 3 && y == 3
 {   
     // asd{ x == 1 }
     //{x == 1}

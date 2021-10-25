@@ -4,18 +4,36 @@
  * ------------------------------------------------------------------------------------------ */
 
 import * as path from 'path';
-import { workspace, ExtensionContext } from 'vscode';
+import { workspace, ExtensionContext, commands, window, Position } from 'vscode';
+import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind } from 'vscode-languageclient/node';
 
-import {
-	LanguageClient,
-	LanguageClientOptions,
-	ServerOptions,
-	TransportKind
-} from 'vscode-languageclient/node';
+import WppVerificationView from './ui/wppVerificationView';
+import { WppVerificationItem } from './api/wppVerification';
+
 
 let client: LanguageClient;
 
+const verified: WppVerificationItem = {
+	position: new Position(5, 10),
+	verificationStatus: true
+};
+
+const unverified: WppVerificationItem = {
+	position: new Position(6, 10),
+	verificationStatus: false
+};
+
 export function activate(context: ExtensionContext) {
+
+	console.log('Congratulations, your extension "wpp" is now active!');
+
+	const showWppCommand = commands.registerCommand('output.showWppVerification', () => WppVerificationView.showWppVerifications([verified,unverified],window.activeTextEditor));
+
+	const hideWppCommand = commands.registerCommand('output.hideWppVerification', () => WppVerificationView.hideWppVerifications(window.activeTextEditor));
+
+	context.subscriptions.push(showWppCommand);
+	context.subscriptions.push(hideWppCommand);
+	
 	// The server is implemented in node
 	const serverModule = context.asAbsolutePath(
 		path.join('server', 'out', 'server.js')

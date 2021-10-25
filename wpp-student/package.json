@@ -17,10 +17,34 @@
 		"vscode": "^1.43.0"
 	},
 	"activationEvents": [
-		"onLanguage:dafny"
+		"onLanguage:dafny",
+		"onCommand:output.showWppVerification",
+		"onCommand:output.hideWppVerification"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
+		"keybindings": [
+			{
+				"command": "output.showWppVerification",
+				"key": "f9",
+				"when": "editorTextFocus && editorLangId == dafny"
+			},
+			{
+				"command": "output.hideWppVerification",
+				"key": "f10",
+				"when": "editorTextFocus && editorLangId == dafny"
+			}
+		],
+		"commands": [
+			{
+				"command": "output.showWppVerification",
+				"title": "Dafny: Show WppVerification"
+			},
+			{
+				"command": "output.hideWppVerification",
+				"title": "Dafny: Hide WppVerification"
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "Example configuration",
